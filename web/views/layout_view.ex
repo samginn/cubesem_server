@@ -1,3 +1,3 @@
-defmodule MyApp.LayoutView do
-  use MyApp.Web, :view
+defmodule CubesemServer.LayoutView do
+  use CubesemServer.Web, :view
 end

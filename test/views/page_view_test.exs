@@ -1,3 +1,3 @@
-defmodule MyApp.PageViewTest do
-  use MyApp.ConnCase, async: true
+defmodule CubesemServer.PageViewTest do
+  use CubesemServer.ConnCase, async: true
 end

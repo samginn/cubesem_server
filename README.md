@@ -1,4 +1,4 @@
-# MyApp
+# CubesemServer
 
 To start your Phoenix app:
 

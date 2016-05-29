@@ -1,5 +1,5 @@
-defmodule MyApp.Router do
-  use MyApp.Web, :router
+defmodule CubesemServer.Router do
+  use CubesemServer.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -11,26 +11,16 @@ defmodule MyApp.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
-    plug Guardian.Plug.VerifyHeader
-    plug Guardian.Plug.LoadResource
   end
 
-  scope "/api", MyApp do
-    pipe_through :api
-
-    scope "/v1" do
-      post "/sign_up", RegistrationController, :create
-
-      post "/session", SessionController, :create
-      delete "/session", SessionController, :delete
-
-      get "/user/current_user", UserController, :current_user
-    end
-  end
-
-  scope "/", MyApp do
+  scope "/", CubesemServer do
     pipe_through :browser # Use the default browser stack
 
-    get "*path", PageController, :index
+    get "/", PageController, :index
   end
+
+  # Other scopes may use custom stacks.
+  # scope "/api", CubesemServer do
+  #   pipe_through :api
+  # end
 end

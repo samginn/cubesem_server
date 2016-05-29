@@ -1,5 +1,5 @@
-defmodule MyApp.PageControllerTest do
-  use MyApp.ConnCase
+defmodule CubesemServer.PageControllerTest do
+  use CubesemServer.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

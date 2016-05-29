@@ -1,3 +1,3 @@
-defmodule MyApp.PageView do
-  use MyApp.Web, :view
+defmodule CubesemServer.PageView do
+  use CubesemServer.Web, :view
 end

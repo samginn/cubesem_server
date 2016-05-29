@@ -1,8 +1,8 @@
-defmodule MyApp.Mixfile do
+defmodule CubesemServer.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :my_app,
+    [app: :cubesem_server,
      version: "0.0.1",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -17,9 +17,11 @@ defmodule MyApp.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {MyApp, []},
+    [mod: {CubesemServer, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :comeonin]]
+                    :phoenix_ecto, :postgrex,
+                    :cors_plug,
+                    :tzdata, :logger_logstash_backend]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,11 +39,9 @@ defmodule MyApp.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
-     {:comeonin, "~> 2.1"},
-     {:guardian, "~> 0.10.0"},
-     {:credo, "~> 0.3", only: [:dev, :test]},
-     {:cors_plug, "~> 1.1"}
-    ]
+     {:cors_plug, "~> 1.1"},
+     {:timex, ">= 2.0.0"},
+     {:logger_logstash_backend, "~> 2.0.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

@@ -1,9 +1,12 @@
-defmodule MyApp.PageController do
-  use MyApp.Web, :controller
+defmodule CubesemServer.PageController do
+  require Logger
+
+  use CubesemServer.Web, :controller
 
   def index(conn, _params) do
-    conn
-    |> put_status(:forbidden)
-    |> render("index.html")
+    IO.puts "Hello world!"
+    Logger.error "hello world!"
+    Logger.debug "Woot! Woot!"
+    render conn, "index.html"
   end
 end
