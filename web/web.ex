@@ -1,12 +1,12 @@
-defmodule MyApp.Web do
+defmodule CubesemServer.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use MyApp.Web, :controller
-      use MyApp.Web, :view
+      use CubesemServer.Web, :controller
+      use CubesemServer.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule MyApp.Web do
     quote do
       use Phoenix.Controller
 
-      alias MyApp.Repo
+      alias CubesemServer.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import MyApp.Router.Helpers
-      import MyApp.Gettext
+      import CubesemServer.Router.Helpers
+      import CubesemServer.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule MyApp.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import MyApp.Router.Helpers
-      import MyApp.ErrorHelpers
-      import MyApp.Gettext
+      import CubesemServer.Router.Helpers
+      import CubesemServer.ErrorHelpers
+      import CubesemServer.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule MyApp.Web do
     quote do
       use Phoenix.Channel
 
-      alias MyApp.Repo
+      alias CubesemServer.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
-      import MyApp.Gettext
+      import CubesemServer.Gettext
     end
   end
 

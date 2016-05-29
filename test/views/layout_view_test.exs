@@ -1,3 +1,3 @@
-defmodule MyApp.LayoutViewTest do
-  use MyApp.ConnCase, async: true
+defmodule CubesemServer.LayoutViewTest do
+  use CubesemServer.ConnCase, async: true
 end

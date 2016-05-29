@@ -6,12 +6,12 @@
 use Mix.Config
 
 # Configures the endpoint
-config :my_app, MyApp.Endpoint,
+config :cubesem_server, CubesemServer.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
-  secret_key_base: "cda4ef96270e4a30b461523308600c6c21789781451adf546dca0d85a197968c/k39pTv",
+  secret_key_base: "NIcZc1Esh6FzM5DHE5aRaPUOA0IlXknDnv9dOwMiFnw+bXLCmkusiuo6SRQiPbfh",
   render_errors: [accepts: ~w(html json)],
-  pubsub: [name: MyApp.PubSub,
+  pubsub: [name: CubesemServer.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
@@ -28,10 +28,11 @@ config :phoenix, :generators,
   migration: true,
   binary_id: false
 
-config :guardian, Guardian,
-  allowed_algos: ["HS512"],
-  verify_module: Guardian.JWT,
-  issuer: "MyApp",
-  ttl: { 30, :days },
-  verify_issuer: true,
-  serializer: MyApp.GuardianSerializer
+config :logger,
+  backends: [{LoggerLogstashBackend, :error_log}, :console]
+
+config :logger, :error_log,
+  host: "localhost",
+  port: 10001,
+  level: :warn,
+  type: "cubesem_log"

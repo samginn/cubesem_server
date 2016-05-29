@@ -1,5 +1,5 @@
-defmodule MyApp.ErrorView do
-  use MyApp.Web, :view
+defmodule CubesemServer.ErrorView do
+  use CubesemServer.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"
