@@ -21,7 +21,7 @@ defmodule CubesemServer.Mixfile do
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex,
                     :cors_plug,
-                    :tzdata, :logger_logstash_backend]]
+                    :timex, :tzdata, :logger_logstash_backend]]
   end
 
   # Specifies which paths to compile per environment.
