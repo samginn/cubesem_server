@@ -41,7 +41,8 @@ defmodule CubesemServer.Mixfile do
      {:cowboy, "~> 1.0"},
      {:cors_plug, "~> 1.1"},
      {:timex, ">= 2.0.0"},
-     {:logger_logstash_backend, "~> 2.0.0"}]
+     {:logger_logstash_backend, "~> 2.0.0"},
+     {:exrm, "~> 1.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
